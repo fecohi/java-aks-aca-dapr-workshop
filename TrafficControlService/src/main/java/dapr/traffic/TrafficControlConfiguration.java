@@ -47,9 +47,14 @@ public class TrafficControlConfiguration {
     private int legalCorrection;
 
 
+    // @Bean
+    // public VehicleStateRepository vehicleStateRepository(final DaprClient daprClient) {
+    //     return new DaprVehicleStateRepository(daprClient);
+    // }
+
     @Bean
-    public VehicleStateRepository vehicleStateRepository(final DaprClient daprClient) {
-        return new DaprVehicleStateRepository(daprClient);
+    public VehicleStateRepository vehicleStateRepository() {
+        return new InMemoryVehicleStateRepository();
     }
 
     @Bean
